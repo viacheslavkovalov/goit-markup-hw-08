@@ -1,0 +1,62 @@
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity $timing-function $transition-duration;
+
+  &--is-hidden {
+    opacity: 0;
+    pointer-events: none;
+
+    &.modal {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-height: 581px;
+  min-width: 528px;
+
+  border-radius: 4px;
+  background-color: $primary-white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform $timing-function $transition-duration;
+}
+
+.button--close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  @extend %flex-center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $primary-white-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus .button--close__icon {
+    fill: $accent-color;
+  }
+}
+.button--close__icon {
+  width: 11px;
+  height: 11px;
+  fill: $logo-color;
+
+  transition: fill $timing-function $transition-duration;
+}

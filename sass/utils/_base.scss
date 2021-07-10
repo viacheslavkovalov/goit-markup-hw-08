@@ -1,0 +1,40 @@
+body {
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+  font-size: $item-font-size;
+
+  color: $primary-text-color;
+  background-color: $primary-white-color;
+
+  line-height: 1.173;
+  letter-spacing: 0.03em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Сброс стилей */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+}

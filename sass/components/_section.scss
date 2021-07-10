@@ -1,0 +1,35 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  &--no-pading-top {
+    padding-top: 0;
+  }
+
+  &--secondary-bg-color {
+    background-color: $secondary-bg-color;
+  }
+}
+
+.section__title {
+  font-weight: $title-font-weight;
+  font-size: $title-font-size;
+  color: $title-text-color;
+  text-align: center;
+  line-height: 1.167;
+  margin-bottom: 50px;
+
+  &--hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}

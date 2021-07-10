@@ -1,0 +1,33 @@
+.features-list {
+  @extend %flexed-margin;
+}
+
+.features-card {
+  flex-basis: calc((100%-90px) / 4);
+  margin-right: 30px;
+}
+.features-card__thumb {
+  width: 100%;
+  padding: 25px 0;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  background-color: $secondary-bg-color;
+}
+
+.features-card__icon {
+  width: 70px;
+  height: 70px;
+}
+
+.features-card__title {
+  font-weight: $title-font-weight;
+  font-size: $item-font-size;
+  color: $title-text-color;
+  text-transform: uppercase;
+  line-height: 1.143;
+}
+
+.features-card__text {
+  margin-top: 10px;
+  line-height: 1.7142;
+}

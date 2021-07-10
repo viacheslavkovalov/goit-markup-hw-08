@@ -1,0 +1,11 @@
+.card {
+  line-height: 1.188;
+}
+
+.thumb {
+  @extend %flex-center;
+}
+
+.nav {
+  @extend %flex-align-center;
+}

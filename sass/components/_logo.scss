@@ -1,0 +1,15 @@
+.nav__logo {
+  display: flex;
+  color: $logo-color;
+  font-family: "raleway";
+  font-weight: $title-font-weight;
+  font-size: $logo-font-size;
+  line-height: 1.192;
+
+  &-forepart {
+    color: $accent-color;
+  }
+  &--footer {
+    color: $primary-white-color;
+  }
+}

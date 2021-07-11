@@ -41,3 +41,11 @@
   font-size: $form-title-size;
   color: $title-text-color;
 }
+
+%nav__logo {
+  color: $logo-color;
+  font-family: "raleway";
+  font-weight: $title-font-weight;
+  font-size: 24px;
+  line-height: 1.167;
+}

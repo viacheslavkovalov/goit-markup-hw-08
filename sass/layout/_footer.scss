@@ -4,6 +4,12 @@
   background-color: $footer-color;
 }
 
+.nav--footer {
+  @media screen and (min-width: $desk-point) {
+    margin-right: 70px;
+  }
+}
+
 .nav-address {
   margin-top: 20px;
   line-height: 1.714;
@@ -14,7 +20,13 @@
 }
 
 .social-footer {
-  margin-left: 70px;
+  margin-bottom: 60px;
+  @media screen and (min-width: $tab-point) {
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: $desk-point) {
+    text-align: left;
+  }
 }
 .social-footer__title {
   font-weight: $title-font-weight;
@@ -23,6 +35,10 @@
   line-height: 1.143;
 
   color: $primary-white-color;
+
+  @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+    text-align: center;
+  }
 }
 .social-footer-list {
   display: inline-flex;
@@ -51,4 +67,18 @@
   width: 20px;
   height: 20px;
   transition: fill $timing-function $transition-duration;
+}
+
+.footer-contacts-wrapper {
+  @media screen and (min-width: $tab-point) {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+    justify-content: space-between;
+    padding-left: 61px;
+    padding-right: 74px;
+    margin-bottom: 60px;
+  }
 }

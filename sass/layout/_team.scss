@@ -1,21 +1,49 @@
 .team-list {
-  @extend %flexed-margin;
+  // width: 100%;
+  @media screen and (min-width: $tab-point) {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+      margin: -15px;
+    }
+    @media screen and (min-width: $desk-point) {
+      justify-content: space-between;
+    }
+  }
 }
 
 .team-list__item {
-  margin-right: 30px;
-  background-color: $primary-white-color;
+  // width: 100%;
   text-align: center;
-  width: 270px;
-  height: 428px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: $primary-white-color;
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: $desk-point) {
+    flex-basis: calc((100% - 120px) / 4);
+  }
 }
 
 .team-member {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
+
+  @media screen and (min-width: $desk-point) {
+    padding-bottom: 30px;
+  }
 }
 .team-member__name {
   color: $title-text-color;
@@ -32,10 +60,9 @@
   display: flex;
   justify-content: center;
   margin-top: 16px;
-  margin-right: -10px;
 }
 
-.socials__item {
+.socials__item:not(:last-child) {
   margin-right: 10px;
 }
 

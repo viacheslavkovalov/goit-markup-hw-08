@@ -1,12 +1,35 @@
 .info-nav {
-  display: flex;
-  margin-left: auto;
+  // align-items: center;
+  @media screen and (min-width: $tab-point) {
+    display: flex;
+  }
+
+  @media screen and (max-width: $tab-point - 1px) {
+    display: none;
+  }
+  @media screen and (max-width: $desk-point - 1px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: $desk-point) {
+    flex-direction: row;
+    margin-left: auto;
+  }
 
   &--footer {
     display: block;
-    margin-top: 9px;
+    margin-top: 8px;
+    margin-bottom: 60px;
+    @media screen and (max-width: $tab-point - 1px) {
+    }
+    @media screen and (min-width: $tab-point) {
+      margin-bottom: 0px;
+    }
+    @media screen and (min-width: $desk-point) {
+      margin-top: 9px;
+    }
   }
 }
+
 .info-nav__icon {
   fill: currentColor;
   margin-right: 10px;
@@ -14,25 +37,55 @@
 
 .info-nav__item {
   &:not(:last-child) {
-    margin-right: 50px;
+    @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: $desk-point) {
+      margin-right: 30px;
+    }
   }
   &--footer:last-child {
-    margin-top: 9px;
+    margin-top: 8px;
+    @media screen and (min-width: $desk-point) {
+      margin-top: 9px;
+    }
   }
 }
-
 .info-nav__link {
-  @extend %flex-align-center;
-  @extend %nav-link;
+  // @extend %flex-align-center;
+  font-weight: $nav-font-weight;
+  letter-spacing: 0.02em;
+  line-height: 1.172;
+  display: flex;
+  align-items: center;
   color: $primary-text-color;
+
+  @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+    font-size: 12px;
+  }
 
   &--footer {
     padding-top: 0px;
     padding-bottom: 0px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
-  }
+    letter-spacing: 0.02em;
+    line-height: 1.172;
+    align-items: center;
 
+    @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+      font-size: 14px;
+    }
+    // color: $primary-text-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      .info-nav__icon {
+        fill: currentColor;
+      }
+    }
+  }
   &:hover,
   &:focus {
     color: $accent-color;
@@ -43,8 +96,10 @@
 }
 
 .site-nav {
+  @media screen and (max-width: $tab-point - 1px) {
+    display: none;
+  }
   display: flex;
-  margin-left: 93px;
 }
 .site-nav__item:not(:last-child) {
   margin-right: 50px;
@@ -73,5 +128,9 @@
       border-radius: 2px;
       background-color: $accent-color;
     }
+  }
+
+  &--mobile-current {
+    color: $accent-color;
   }
 }

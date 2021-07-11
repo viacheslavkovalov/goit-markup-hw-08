@@ -17,15 +17,20 @@
       transform: translate(-50%, -50%) scale(1.5);
     }
   }
+
+  @media screen and (max-width: $mob-point - 1px) {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+  }
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  min-height: 581px;
-  min-width: 528px;
+  padding: 40px;
+  width: 90vw;
 
   border-radius: 4px;
   background-color: $primary-white-color;
@@ -34,6 +39,19 @@
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform $timing-function $transition-duration;
+
+  @media screen and (max-width: $mob-point - 1px) {
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: $mob-point) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: $desk-point) {
+    min-height: 581px;
+    min-width: 528px;
+  }
 }
 
 .button--close {

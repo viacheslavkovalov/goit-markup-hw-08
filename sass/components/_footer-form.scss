@@ -1,6 +1,15 @@
 .subscribe-form {
   display: block;
   margin-left: auto;
+  @media screen and (min-width: $tab-point) and (max-width: $desk-point - 1px) {
+    width: 450px;
+  }
+  // @media screen and (min-width: $desk-point) {
+  //   min-width: 358px;
+  // }
+  @media screen and (max-width: $desk-point - 1px) {
+    margin-right: auto;
+  }
 }
 .subscribe-form__title {
   display: block;
@@ -8,13 +17,24 @@
   font-size: $item-font-size;
   text-transform: uppercase;
   line-height: 1.143;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  // margin-bottom: 12px;
   color: $primary-white-color;
+  @media screen and (min-width: $tab-point) {
+    text-align: center;
+  }
+  @media screen and (min-width: $desk-point) {
+    text-align: left;
+  }
 }
 
 .subscribe-box {
-  display: flex;
-  width: 570px;
+  @media screen and (min-width: $desk-point) {
+    display: flex;
+    align-items: center;
+  }
+  // display: flex;
+  // width: 570px;
 }
 
 .subscribe-box__mail {
@@ -28,7 +48,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   padding: 15px 16px;
-  margin-right: 12px;
+  // margin-right: 12px;
   transition: border-color $timing-function $transition-duration;
   &:hover,
   &:focus {
@@ -40,17 +60,43 @@
     font-size: $button-font-size;
     line-height: 1.25;
   }
+  @media screen and (max-width: $desk-point - 1px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: $desk-point) {
+    min-width: 358px;
+  }
+}
+
+.subscribe {
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: $desk-point) {
+    margin-left: 12px;
+    align-self: flex-end;
+  }
 }
 
 .subscribe-button {
-  padding: 0;
-  @extend %flex-center;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 29px;
+  text-align: left;
+  line-height: 1.875; // padding-right: 0;
+  // @extend %flex-center;
   @extend %subscribe-primary-button;
 }
 .subscribe-button__icon {
-  display: block;
+  position: absolute;
   width: 24px;
   height: 24px;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  // display: block;
+  // width: 24px;
+  // height: 24px;
   fill: $primary-white-color;
-  margin-left: 10px;
+  // margin-left: 10px;
 }

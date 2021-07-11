@@ -15,7 +15,9 @@ $title-font-weight: 700;
 $nav-font-weight: 500;
 
 $hero-font-size: 44px;
+$mobile-nav-size: 40px;
 $title-font-size: 36px;
+$title-mob-font-size: 28px;
 $logo-font-size: 26px;
 $form-title-size: 20px;
 $button-product-size: 18px;
@@ -25,3 +27,8 @@ $form-label-size: 12px;
 
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $transition-duration: 250ms;
+
+// Точки перелом
+$mob-point: 480px;
+$tab-point: 768px;
+$desk-point: 1200px;

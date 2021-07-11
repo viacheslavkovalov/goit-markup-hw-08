@@ -1,15 +1,23 @@
 .nav__logo {
-  display: flex;
+  // display: flex;
   color: $logo-color;
   font-family: "raleway";
   font-weight: $title-font-weight;
-  font-size: $logo-font-size;
-  line-height: 1.192;
+  font-size: 24px;
+  line-height: 1.167;
+  // margin-right: auto;
+
+  @media screen and (min-width: $desk-point) {
+    margin-right: 93px;
+    font-size: $logo-font-size;
+    line-height: 1.192;
+  }
 
   &-forepart {
     color: $accent-color;
   }
   &--footer {
+    @extend %nav__logo;
     color: $primary-white-color;
   }
 }

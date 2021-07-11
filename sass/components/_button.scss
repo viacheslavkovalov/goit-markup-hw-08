@@ -18,5 +18,9 @@
     padding: 10px 32px;
     margin-top: 30px;
     @extend %subscribe-primary-button;
+
+    @media screen and (max-width: $mob-point - 1px) {
+      margin-top: 20px;
+    }
   }
 }

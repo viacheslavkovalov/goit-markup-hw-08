@@ -1,5 +1,142 @@
 .page-header {
+  position: relative;
   display: flex;
-  height: 80px;
+  align-items: center;
+  height: 60px;
   border-bottom: 1px solid #ececec;
+
+  @media screen and (min-width: $tab-point) {
+    height: 80px;
+  }
+}
+
+.menu-button {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $title-text-color;
+  cursor: pointer;
+  z-index: 2;
+  @media screen and (min-width: $tab-point) {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    .menu-icon {
+      fill: $accent-color;
+    }
+  }
+  transition: color $transition-duration $timing-function;
+}
+.menu-icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.menu-icon__icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .menu-icon__icon-cross {
+  display: block;
+}
+
+.menu-button.is-open .menu-icon__icon-burger {
+  display: none;
+}
+
+.menu-container {
+  z-index: 1;
+  display: none;
+}
+
+.menu-container.is-open {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: $primary-white-color;
+
+  @media screen and (min-width: $tab-point) {
+    display: none;
+  }
+}
+
+.menu-container__nav {
+  margin-bottom: auto;
+}
+.menu-container__nav-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu-container__nav-link {
+  font-weight: $nav-font-weight;
+  font-size: $mobile-nav-size;
+  letter-spacing: 0.02em;
+  line-height: 1.175;
+  color: $title-text-color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $accent-color;
+  }
+  transition: color $transition-duration $timing-function;
+}
+
+.menu-container__info-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+}
+
+.menu-container__info-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu-conteiner__info-link {
+  @extend %flex-align-center;
+  font-weight: $nav-font-weight;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  line-height: 1.167;
+  color: $primary-text-color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $accent-color;
+    font-size: 34px;
+    line-height: 1.176;
+  }
+  transition: color $transition-duration $timing-function;
+}
+
+.menu-container__socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+}
+
+.menu-container__socials-item {
+  margin-left: 10px;
+  &:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    padding-right: 10px;
+  }
+}
+
+.menu-container__socials-link {
+  font-weight: $nav-font-weight;
+  font-size: $button-product-size;
+  letter-spacing: 0.02em;
+  line-height: 1.222;
+  color: $accent-color;
 }

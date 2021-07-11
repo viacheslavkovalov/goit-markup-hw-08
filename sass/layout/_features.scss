@@ -1,10 +1,25 @@
 .features-list {
-  @extend %flexed-margin;
+  @media screen and (min-width: $tab-point) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+  }
 }
-
 .features-card {
-  flex-basis: calc((100%-90px) / 4);
-  margin-right: 30px;
+  &:not(:last-child) {
+    @media screen and (max-width: $tab-point - 1px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tab-point) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: $desk-point) {
+    flex-basis: calc((100% - 120px) / 4);
+  }
 }
 .features-card__thumb {
   width: 100%;
@@ -25,6 +40,10 @@
   color: $title-text-color;
   text-transform: uppercase;
   line-height: 1.143;
+
+  @media screen and(max-width: $tab-point) {
+    text-align: center;
+  }
 }
 
 .features-card__text {
